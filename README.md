@@ -1,36 +1,77 @@
-# GlobalSearchPro
+# Global Search
 
-Autor: taki  
-Feito por taki
+Sistema de busca global avancado para Vencord, inspirado no Discord Mobile.
 
-Aviso: utilize com moderação.
+## Recursos
+- Busca por texto, palavras-chave ou frases
+- Abas: Mensagens | Midia | Arquivos
+- Filtro por autor (inclui "Minhas mensagens")
+- Paginacao com cursor
+- Clique para ir direto a mensagem
+- Modal grande com loading e tratamento de erros
 
-## Visao geral
-GlobalSearchPro adiciona uma busca global profissional no Vencord, semelhante ao Discord Mobile. Ele abre um modal grande com abas para Mensagens, Midia e Arquivos, com filtro opcional por author_id e paginacao por cursor.
+**Desenvolvido por Taki** — discord.gg/pureza  
+Utilize com moderacao.
 
-## Como funciona
-- Usa somente o endpoint oficial do Discord: `POST /users/@me/messages/search/tabs`
-- Sem scraping, sem varrer servidores manualmente e sem burlar rate limit
-- Retorna apenas mensagens que sua conta tem permissao para ver
+## Como usar este plugin (instalacao completa)
 
-## Como instalar no Vencord
-1. `pnpm install`
-2. `pnpm build`
-3. `pnpm dev`
+### 1. Como colocar o plugin no Vencord
+Clone o repositorio oficial do Vencord (se ainda nao tiver):
 
-## Como ativar
-1. Abra as configuracoes do Vencord
-2. Va em Plugins
-3. Ative `GlobalSearchPro`
+```bash
+git clone https://github.com/Vendicated/Vencord
+cd Vencord
+```
 
-## Como usar
-1. Clique no botao de busca na barra principal do chat
-2. Digite o texto da busca
-3. Opcional: preencha o author_id para filtrar por um usuario (pode ser voce)
-4. Troque entre as abas de Mensagens, Midia e Arquivos
-5. Use "Carregar mais" para paginar
-6. Clique em um resultado para ir direto a mensagem
+### 2. Instalar dependencias
 
-## Recompilar apos mudancas
-1. `pnpm build`
-2. Recarregue ou reinicie o Vencord
+```bash
+pnpm install
+```
+
+### 3. Onde colocar a pasta do plugin
+Crie a pasta `src/plugins/GlobalSearch` e coloque o arquivo deste projeto como
+`index.tsx` dentro dela.
+
+Estrutura final:
+
+```
+Vencord/
+└── src/
+    └── plugins/
+        └── GlobalSearch/
+            └── index.tsx
+```
+
+### 4. Como buildar
+
+```bash
+pnpm build
+```
+
+(O build gera o arquivo injetavel em `dist/`.)
+
+### 5. Como injetar
+
+```bash
+pnpm inject
+```
+
+(Executa o injector para aplicar no Discord instalado.)
+
+### 6. Como ativar no Discord
+Abra o Discord → Configuracoes (engrenagem) → Vencord (no menu lateral) →
+Plugins → procure por GlobalSearch → ative o switch.
+
+## Dicas extras
+- O botao de busca aparece automaticamente na barra de chat (icone de lupa).
+- Funciona apenas em DMs e grupos (endpoint oficial do Discord Mobile).
+  Mensagens de servidores compartilhados nao sao incluidas para evitar abuso de
+  rate limit (conforme especificacao).
+- Use com moderacao (o Discord limita buscas).
+- Codigo 100% tipado, limpo, sem any desnecessario, sem console injection, sem
+  require e compativel com build oficial.
+
+Pronto! Copie, cole, build e aproveite.
+
+GitHub: https://github.com/pureza-discord/Global-Search-by-Taki
