@@ -75,3 +75,4 @@ Plugins → procure por GlobalSearch → ative o switch.
 Pronto! Copie, cole, build e aproveite.
 
 GitHub: https://github.com/pureza-discord/Global-Search-by-Taki
+Discord: discord.gg/pureza

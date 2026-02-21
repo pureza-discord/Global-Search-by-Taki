@@ -2,11 +2,10 @@
 // Copyright (c) 2026 Taki
 // SPDX-License-Identifier: GPL-3.0-or-later
 
-import { definePlugin } from "@utils/types";
+import definePlugin from "@utils/types";
 import { findByProps } from "@webpack";
 import { openModal } from "@utils/modal";
-import { showToast } from "@utils/toasts";
-import * as React from "react";
+import { React, showToast } from "@webpack/common";
 
 interface SearchTabResult {
     messages: any[][];
